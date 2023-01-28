@@ -11,7 +11,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.text());
 
 app.post("/api/beacon", (req, res) => {
-  console.log(req.body);
+  console.log(`${req.body}
+    ip: ${req.ip} 
+    url: ${req.hostname +''+ req.url}
+    received: ${new Date().toISOString()}`);
   return res.status(204);
 });
 

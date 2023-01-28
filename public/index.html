@@ -8,11 +8,23 @@
   <meta name="description" content="Beacon API test" />
   <script type="text/javascript">
     const url = 'http://localhost:9000/api/beacon';
-    let data = {'session': '12345'};
+    let data = {
+        'session': '12345',
+        'url': window.location.href,
+        'referrer': document.referrer,
+        'browser': window.navigator.userAgent,
+        'screen_size': window.innerWidth
+    };
     data = JSON.stringify(data);
     navigator.sendBeacon(url, data);
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'hidden') {
+        navigator.sendBeacon(url, data);
+      }
+    });
+    // Will lock if clicked too quickly.
+    document.addEventListener('click', (el) => {
+      if (el.target.nodeName == 'H1') {
         navigator.sendBeacon(url, data);
       }
     });
