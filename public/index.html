@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+  <title>Beacon API test</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beacon API test" />
+  <script type="text/javascript">
+    const url = 'http://localhost:9000/api/beacon';
+    let data = {'session': '12345'};
+    data = JSON.stringify(data);
+    navigator.sendBeacon(url, data);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        navigator.sendBeacon(url, data);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Beacon</h1>
+  </header>
+  <main>
+    <div id="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        consequat feugiat augue nec auctor. Duis tincidunt et metus ut
+        commodo. Sed vulputate ante ante, ac fringilla risus rhoncus ac. Ut
+        ultrices quam nulla. Fusce vestibulum neque tincidunt lectus cursus
+        porta. Donec eu justo porttitor, bibendum felis non, efficitur velit.
+        Fusce euismod neque ut magna eleifend, ut tristique diam lacinia.
+        Phasellus quis lacinia eros. Fusce faucibus elit a lacus rutrum, nec
+        venenatis augue volutpat. Nunc porta nulla id enim faucibus, iaculis
+        gravida odio dignissim. Phasellus ornare est sit amet est vehicula, ac
+        elementum ligula commodo. Donec venenatis augue vel efficitur
+        imperdiet. Proin sagittis, elit vitae pharetra rhoncus, urna tortor
+        ullamcorper purus, sit amet rhoncus quam libero quis libero.
+      </p>
+      <p>
+        Morbi eu efficitur metus, ut porttitor mi. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        Quisque maximus id orci rhoncus mollis. Sed vitae est quam. Aenean
+        consequat sit amet dolor at porttitor. Proin eu dui maximus eros porta
+        imperdiet a nec ipsum. Duis in magna non enim fermentum maximus.
+      </p>
+      <p>
+        Sed at tortor orci. Praesent orci velit, ultrices sit amet diam ut,
+        ornare eleifend tellus. Nunc egestas eros vitae tellus suscipit, et
+        egestas ex blandit. Quisque sit amet metus vulputate augue pharetra
+        dictum. Nulla commodo nulla lacus, vel fringilla mauris posuere quis.
+        Duis euismod aliquet sem gravida volutpat. Vestibulum sapien sapien,
+        condimentum id mi in, dignissim pretium tellus. Ut tellus diam,
+        vehicula id turpis ut, malesuada iaculis nisl. Etiam rhoncus, lorem in
+        laoreet dignissim, lorem magna interdum mi, vitae rutrum ex enim
+        sollicitudin lacus. Nam et eros vulputate justo faucibus euismod
+        rhoncus fermentum augue. Vestibulum ut enim molestie, interdum sapien
+        ut, mattis mauris. Pellentesque tempor ipsum id metus volutpat mollis.
+        Nullam congue, mi porttitor malesuada tincidunt, sapien sem luctus ex,
+        eget scelerisque neque arcu eget quam. Curabitur efficitur, sem vel
+        tincidunt pharetra, lorem nibh accumsan lectus, sit amet convallis
+        ipsum est cursus nunc.
+      </p>
+      <p>
+        Duis accumsan sagittis varius. Nam augue metus, auctor et magna in,
+        tristique maximus ex. In scelerisque ultrices ornare. Donec imperdiet
+        elementum sapien, at tincidunt enim imperdiet molestie. Donec vel
+        suscipit tortor. Vestibulum ac ipsum gravida, aliquet risus vitae,
+        bibendum felis. Aenean convallis, libero a venenatis tempor, magna
+        ligula tempus ante, eu pharetra turpis nibh id nisi. In a facilisis
+        lorem, id molestie neque. Donec sit amet accumsan tellus. Curabitur
+        fringilla, lorem non imperdiet ultrices, nisl erat lobortis ante, at
+        viverra dui mauris blandit felis.
+      </p>
+      <div class="concured concured-recommendations" data-concured-ui="bar" data-concured-columns="3"
+        data-concured-scroll="600"></div>
+      <p>
+        Cras a posuere nisi, dignissim tincidunt erat. Nulla dapibus lorem eu
+        laoreet elementum. Pellentesque et erat ornare velit sollicitudin
+        cursus. Integer auctor maximus ex sit amet scelerisque. Suspendisse
+        justo enim, consectetur lobortis eleifend at, tristique in mi. Quisque
+        pellentesque justo non elit tincidunt, ut sollicitudin sapien rutrum.
+        Nullam porttitor quis ligula a suscipit. Donec mattis ex mi, ac
+        porttitor nunc tristique quis. Nunc id nibh ut sapien viverra
+        lobortis. Vestibulum dapibus ex tortor, vel vulputate ex laoreet sed.
+        Suspendisse venenatis rutrum pharetra. Nunc dignissim diam accumsan
+        sagittis venenatis. Sed efficitur diam vel eros commodo, non sagittis
+        mi scelerisque. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        consequat feugiat augue nec auctor. Duis tincidunt et metus ut
+        commodo. Sed vulputate ante ante, ac fringilla risus rhoncus ac. Ut
+        ultrices quam nulla. Fusce vestibulum neque tincidunt lectus cursus
+        porta. Donec eu justo porttitor, bibendum felis non, efficitur velit.
+        Fusce euismod neque ut magna eleifend, ut tristique diam lacinia.
+        Phasellus quis lacinia eros. Fusce faucibus elit a lacus rutrum, nec
+        venenatis augue volutpat. Nunc porta nulla id enim faucibus, iaculis
+        gravida odio dignissim. Phasellus ornare est sit amet est vehicula, ac
+        elementum ligula commodo. Donec venenatis augue vel efficitur
+        imperdiet. Proin sagittis, elit vitae pharetra rhoncus, urna tortor
+        ullamcorper purus, sit amet rhoncus quam libero quis libero.
+      </p>
+      <p>
+        Morbi eu efficitur metus, ut porttitor mi. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        Quisque maximus id orci rhoncus mollis. Sed vitae est quam. Aenean
+        consequat sit amet dolor at porttitor. Proin eu dui maximus eros porta
+        imperdiet a nec ipsum. Duis in magna non enim fermentum maximus.
+      </p>
+      <p>
+        Sed at tortor orci. Praesent orci velit, ultrices sit amet diam ut,
+        ornare eleifend tellus. Nunc egestas eros vitae tellus suscipit, et
+        egestas ex blandit. Quisque sit amet metus vulputate augue pharetra
+        dictum. Nulla commodo nulla lacus, vel fringilla mauris posuere quis.
+        Duis euismod aliquet sem gravida volutpat. Vestibulum sapien sapien,
+        condimentum id mi in, dignissim pretium tellus. Ut tellus diam,
+        vehicula id turpis ut, malesuada iaculis nisl. Etiam rhoncus, lorem in
+        laoreet dignissim, lorem magna interdum mi, vitae rutrum ex enim
+        sollicitudin lacus. Nam et eros vulputate justo faucibus euismod
+        rhoncus fermentum augue. Vestibulum ut enim molestie, interdum sapien
+        ut, mattis mauris. Pellentesque tempor ipsum id metus volutpat mollis.
+        Nullam congue, mi porttitor malesuada tincidunt, sapien sem luctus ex,
+        eget scelerisque neque arcu eget quam. Curabitur efficitur, sem vel
+        tincidunt pharetra, lorem nibh accumsan lectus, sit amet convallis
+        ipsum est cursus nunc.
+      </p>
+      <p>
+        Duis accumsan sagittis varius. Nam augue metus, auctor et magna in,
+        tristique maximus ex. In scelerisque ultrices ornare. Donec imperdiet
+        elementum sapien, at tincidunt enim imperdiet molestie. Donec vel
+        suscipit tortor. Vestibulum ac ipsum gravida, aliquet risus vitae,
+        bibendum felis. Aenean convallis, libero a venenatis tempor, magna
+        ligula tempus ante, eu pharetra turpis nibh id nisi. In a facilisis
+        lorem, id molestie neque. Donec sit amet accumsan tellus. Curabitur
+        fringilla, lorem non imperdiet ultrices, nisl erat lobortis ante, at
+        viverra dui mauris blandit felis.
+      </p>
+      <p>
+        Cras a posuere nisi, dignissim tincidunt erat. Nulla dapibus lorem eu
+        laoreet elementum. Pellentesque et erat ornare velit sollicitudin
+        cursus. Integer auctor maximus ex sit amet scelerisque. Suspendisse
+        justo enim, consectetur lobortis eleifend at, tristique in mi. Quisque
+        pellentesque justo non elit tincidunt, ut sollicitudin sapien rutrum.
+        Nullam porttitor quis ligula a suscipit. Donec mattis ex mi, ac
+        porttitor nunc tristique quis. Nunc id nibh ut sapien viverra
+        lobortis. Vestibulum dapibus ex tortor, vel vulputate ex laoreet sed.
+        Suspendisse venenatis rutrum pharetra. Nunc dignissim diam accumsan
+        sagittis venenatis. Sed efficitur diam vel eros commodo, non sagittis
+        mi scelerisque. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas.
+      </p>
+    </div>
+    <div id="sidebar"></div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
