@@ -8,13 +8,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 })
 );
-app.use(bodyParser.text());
+app.use(bodyParser.json());
 
 app.post("/api/beacon", (req, res) => {
-  console.log(`${req.body}
-    ip: ${req.ip} 
-    url: ${req.hostname +''+ req.url}
-    received: ${new Date().toISOString()}`);
+  console.log(req.body);
+  console.log(`ip: ${req.ip} url: ${req.hostname +''+ req.url} received: ${new Date().toISOString()}`);
   return res.status(204);
 });
 
