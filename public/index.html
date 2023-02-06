@@ -9,14 +9,50 @@
   <script type="text/javascript">
     let beacon = [];
     const url = 'http://localhost:9000/api/beacon';
-    beacon.push({
-      session: '12345',
-      url: window.location.href,
-      referrer: document.referrer,
-      browser: window.navigator.userAgent,
-      screen_size: window.innerWidth,
-      page_start: new Date()
-    });
+    let user_uuid = null;
+    let user_id = null;
+    try {
+      user_id = localStorage.getItem('beacon.user');
+      if (user_id === null || undefined) {
+        user_uuid = window.crypto.randomUUID();
+        localStorage.setItem('beacon.user', user_uuid, 30);
+      } else {
+        user_uuid = user_id;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    let session_uuid = null;
+    let session_id = null;
+    try {
+      session_id = sessionStorage.getItem('beacon.session');
+      if (session_id === null || undefined) {
+        session_uuid = window.crypto.randomUUID();
+        sessionStorage.setItem('concured.session', session_uuid);
+        console.log(session_uuid);
+        beacon.push({
+          session: session_uuid,
+          url: window.location.href,
+          referrer: document.referrer,
+          browser: window.navigator.userAgent,
+          screen_size: window.innerWidth,
+          page_start: new Date()
+        });
+      } else {
+        session_uuid = session_id;
+        console.log(session_id);
+        beacon.push({
+          session: session_id,
+          url: window.location.href,
+          referrer: document.referrer,
+          browser: window.navigator.userAgent,
+          screen_size: window.innerWidth,
+          page_start: new Date()
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
     document.addEventListener('click', (el) => {
       if (el.target.nodeName == 'A') {
         el.preventDefault();
