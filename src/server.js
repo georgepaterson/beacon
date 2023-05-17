@@ -9,7 +9,7 @@ app.use(cors());
 app.options('*', cors());
 
 app.post('/api/beacon', (req, res) => {
-  const data = req.body;
+  const data = JSON.parse(req.body);
   // Work with analytics data as a JavaScript object
   console.log(data);
   console.log(`ip: ${req.ip} url: ${req.hostname +''+ req.url} received: ${new Date().toISOString()}`);
