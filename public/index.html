@@ -8,7 +8,7 @@
   <meta name="description" content="Beacon API test" />
   <script type="text/javascript">
     let beacon = [];
-    const url = 'http://localhost:9000/api/beacon';
+    const url = 'http://localhost:8080/api/beacon';
     let user_uuid = null;
     let user_id = null;
     try {
@@ -73,7 +73,8 @@
           beacon.push({
             page_end: new Date()
           });
-          const data = new Blob([JSON.stringify(beacon)], { type: 'application/json' });
+          const data = JSON.stringify(beacon)
+          console.log(data);
           navigator.sendBeacon(url, data);
           beacon = [];
         } catch (error) {
